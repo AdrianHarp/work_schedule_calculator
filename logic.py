@@ -5,13 +5,6 @@ pattern = [True,True,
            False,False,
            True,True,
            False,False,False]
-
-date = input("input target date in this form -> 2025-6-28: ")
-
-mandatory_one = input("input first mandatory date in this form -> 2025-6-28: ")
-
-mandatory_two = input("input second mandatory date in this form -> 2025-6-28: ")
-
 def date_delta(date):
     intial_date = datetime.strptime("2025-05-12", "%Y-%m-%d")
     requested_date = datetime.strptime(date, "%Y-%m-%d")
@@ -28,13 +21,12 @@ def is_mandatory(date,mandatory_one,mandatory_two):
     if date == mandatory_two:
         return True
     return False
-def main(date,mandatory_one,mandatory_two):
+def status(date,mandatory_one,mandatory_two):
     status = "Working" if is_working(date) else "Free"
     if is_mandatory(date,mandatory_one,mandatory_two):
         status = "Working"
-    print(status)
+    return status
 
-main(date,mandatory_one,mandatory_two)
     
 
 
